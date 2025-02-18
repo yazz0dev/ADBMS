@@ -80,3 +80,4 @@ mysql> DESCRIBE d_emp;
 | adhar_no | int         | YES  |     | NULL    |       |
 +----------+-------------+------+-----+---------+-------+
 5 rows in set (0.00 sec)
+//VERIFIED
