@@ -4,7 +4,7 @@
 
 mysql> CREATE DATABASE INVOICE;
 Query OK, 1 row affected (0.21 sec)
-
+ 
 mysql> USE INVOICE;
 Database changed
 
