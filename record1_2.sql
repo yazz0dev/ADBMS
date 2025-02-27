@@ -79,3 +79,4 @@ mysql> desc person;
 
 mysql> DROP TABLE STUDENT1;
 Query OK, 0 rows affected (0.00 sec)
+//VERIFIED
