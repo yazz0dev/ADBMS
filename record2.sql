@@ -161,7 +161,7 @@ Query OK, 1 row affected (0.14 sec)
   
 #4. Delete details of customer who does not have phone number. 
   
-mysql> DELETE FROM EMPLOYEE WHERE phno IS NULL;
+mysql> DELETE FROM customer WHERE phno IS NULL;
 Query OK, 1 row affected (0.10 sec)
 
   
