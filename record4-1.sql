@@ -1,3 +1,14 @@
+mysql> select * from Invoice_item;
++--------+------+----------+
+| inv_id | pid  | quantity |
++--------+------+----------+
+|    101 |    1 |        2 |
+|    101 |    1 |        5 |
+|    101 |    3 |        2 |
+|    103 |    1 |        5 |
++--------+------+----------+
+4 rows in set (0.00 sec)
+
 mysql> select * from customer ;
 +------+------+----------+---------+-----------+
 | id   | name | address  | city    | phno      |
