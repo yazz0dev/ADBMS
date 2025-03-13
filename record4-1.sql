@@ -124,3 +124,4 @@ mysql> select * from customer where name like '_r%';
 | 1001 | arun | mukkam  | calicut | 987654321 |
 +------+------+---------+---------+-----------+
 1 row in set (0.00 sec)
+//VERIFIED
