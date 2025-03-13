@@ -80,3 +80,4 @@ mysql> select concat(name," lives in",city) from customer;
 +-------------------------------+
 4 rows in set (0.00 sec)
 
+//VERIFIED
