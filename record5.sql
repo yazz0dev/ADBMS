@@ -70,3 +70,4 @@ mysql> SELECT DISTINCT c.name FROM customer c WHERE c.id IN (SELECT im.cust_id F
 +------+
 1 row in set (0.00 sec)
 
+//VERIFIED
