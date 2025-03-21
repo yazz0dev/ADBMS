@@ -42,3 +42,4 @@ mysql> select * from invpdt;
 | akil  |    103 |          1 |        5 |
 +-------+--------+------------+----------+
 4 rows in set (0.00 sec)
+//VERIFIED
