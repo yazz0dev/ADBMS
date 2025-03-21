@@ -50,3 +50,4 @@ mysql> select * from customer left join Invoice_master on Invoice_master.cust_id
 | 1004 | ann  | pilasery | tv      | 654324435 |   NULL |    NULL | NULL       |
 +------+------+----------+---------+-----------+--------+---------+------------+
 4 rows in set (0.00 sec)
+//VERIFIED
