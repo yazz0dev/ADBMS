@@ -48,3 +48,4 @@ Invoice_item.pid = product.pid and quantity=2);
 | soap  |
 +-------+
 2 rows in set (0.00 sec)
+//VERIFIED
