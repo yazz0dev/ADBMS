@@ -74,4 +74,5 @@ mysql> call invoice_details(101) $
 
 Query OK, 0 rows affected (0.00 sec)
 
-//VERIFIED
+//RESUBMIT 
+show tables, last one customer name to call
