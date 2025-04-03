@@ -51,7 +51,10 @@ mysql> create procedure 2num(a int, b int, out max int)
     -> set max=b; 
     -> end if; 
     -> end$
-    
+        
+mysql> call 2num(10,50,@max); 
+Query OK, 0 rows affected (0.14 sec)
+
 mysql> select @max as 'greatest number'$
 +-----------------+
 | greatest number |
