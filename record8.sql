@@ -5,21 +5,41 @@ PL/SQL PROGRAMS- STORED PROCEDURES
 
 1.      Create a procedure to display all tables in the invoice database. */
 
-mysql> create procedure shows() show tables from INVOICE  $
-Query OK, 0 rows affected (0.19 sec)
+mysql> create procedure shows()
+    -> select * from customer;
+    -> select * from product;
+    -> select * from Invoice_master;
+    -> select * from Invoice_item;
+    -> $
 
-mysql> call shows() $
-+-------------------+
-| Tables_in_INVOICE |
-+-------------------+
-| Invoice_item      |
-| Invoice_master    |
-| c1                |
-| customer          |
-| invpdt            |
-| product           |
-+-------------------+
-6 rows in set (0.01 sec)
+Query OK, 0 rows affected (0.11 sec)
+
++-----+--------+-------+
+| pid | pname  | price |
++-----+--------+-------+
+|   1 | pen    |    51 |
+|   2 | pencil |   153 |
+|   3 | soap   |   102 |
++-----+--------+-------+
+3 rows in set (0.17 sec)
+
++--------+---------+------------+
+| inv_id | cust_id | inv_date   |
++--------+---------+------------+
+|    101 |    1001 | 2023-02-25 |
+|    103 |    1003 | 2024-01-22 |
++--------+---------+------------+
+2 rows in set (0.20 sec)
+
++--------+------+----------+
+| inv_id | pid  | quantity |
++--------+------+----------+
+|    101 |    1 |        2 |
+|    101 |    1 |        5 |
+|    101 |    3 |        2 |
+|    103 |    1 |        5 |
++--------+------+----------+
+4 rows in set (0.21 sec)
 
 Query OK, 0 rows affected (0.01 sec)
 
@@ -44,25 +64,26 @@ Query OK, 0 rows affected (0.14 sec)
 
 /*3.      Create a procedure to display invoice details of a particular customer. */
 
-mysql> CREATE PROCEDURE invoice_details(inv_id INT)
-    -> BEGIN
-    ->     SELECT 
-    ->         Invoice_master.inv_id,  
-    ->         inv_date,
-    ->         pname,
-    ->         quantity
-    ->     FROM 
-    ->         Invoice_master
-    ->     JOIN 
-    ->         Invoice_item ON Invoice_master.inv_id = Invoice_item.inv_id
-    ->     JOIN 
-    ->         product ON product.pid = Invoice_item.pid
-    ->     WHERE 
-    ->         Invoice_master.inv_id = inv_id; 
-    -> END$
-Query OK, 0 rows affected (0.15 sec)
+CREATE PROCEDURE invoice_details(IN cust_name VARCHAR(10))
+BEGIN
+    SELECT
+        im.inv_id,
+        im.inv_date,
+        p.pname,
+        ii.quantity
+    FROM
+        Invoice_master im  
+    JOIN
+        Invoice_item ii ON im.inv_id = ii.inv_id  
+    JOIN
+        product p ON p.pid = ii.pid  
+    JOIN
+        customer c ON im.cust_id = c.id  
+    WHERE
+        c.name = cust_name;  
+END;
 
-mysql> call invoice_details(101) $
+mysql> call invoice_details('arun') $
 +--------+------------+-------+----------+
 | inv_id | inv_date   | pname | quantity |
 +--------+------------+-------+----------+
@@ -73,6 +94,3 @@ mysql> call invoice_details(101) $
 3 rows in set (0.00 sec)
 
 Query OK, 0 rows affected (0.00 sec)
-
-//RESUBMIT 
-show tables, last one customer name to call
