@@ -97,3 +97,4 @@ mysql> call invoice_details('arun') $
 3 rows in set (0.00 sec)
 
 Query OK, 0 rows affected (0.00 sec)
+//VERIFIED
