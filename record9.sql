@@ -36,3 +36,4 @@ mysql> select pname,price_range(price) from product $
 | soap   | high               |
 +--------+--------------------+
 3 rows in set (0.00 sec)
+//VERIFIED
