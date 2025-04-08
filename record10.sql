@@ -69,3 +69,4 @@ mysql> select * from product $
 |   4 | eraser |    10 |
 +-----+--------+-------+
 4 rows in set (0.00 sec)
+//VERIFIED
