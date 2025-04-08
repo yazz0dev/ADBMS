@@ -3,7 +3,6 @@
 
 mysql> CREATE PROCEDURE ListCustomerNames()
     -> BEGIN
-    ->   -- 1. Declare variables
     ->   DECLARE done INT DEFAULT FALSE;           
     ->   DECLARE customerName VARCHAR(20);   
     ->   DECLARE custCursor CURSOR FOR
