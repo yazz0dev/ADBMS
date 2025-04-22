@@ -6,6 +6,14 @@
 
 (base) ksb@ksb-07:mongod --replSet rs0 --port 27019 --dbpath ./node3 --bind_ip localhost
 
+  ---fix---
+(base) ksb@ksb-07: mongod --replSet rs0 --port 27017 --dbpath ./nod1 --bind_ip localhost
+  
+sudo rm /tmp/mongodb-27017.sock
+
+rm ./nod1/mongod.lock
+  ---end of fix -----
+  
 (base) ksb@ksb-07:~/Documents/yaseen/mongo$ mongosh --port 27019
 Current Mongosh Log ID:	680769232e1cb1d26cd861df
 Connecting to:		mongodb://127.0.0.1:27019/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.0
